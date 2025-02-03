@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name=viewport"
+content="width=device-width,initial-scale=1.0">
+    <title>Untuk Biyy MUAHAHAHA!</title>
+    <style>
+        body {
+            font-family: 'Arial',
+sans-serif;
+            text-align: center;
+            background:
+linear-gradient(to bottom, #ffdde1,
+#ee9ca7);
+            margin: 0;
+            padding: 0; 
+            overflow: hidden;
+        }
+        h1 {
+            colour: #fff;
+            font-size: 3em;
+            margin-top: 50px;
+            animation: fadeIn 2s
+ease-in-out;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: white;
+            animation: fadeIn 3s
+ease-in-out;
+        }
+
+        .heart {
+            font-size: 5em;
+            colour: red;
+            animation: heartbeat 1.5s
+infinite;
+        }
+
+        .btn {
+            background-color: white;
+            color: #ff4d6d;
+            padding: 15px 25pc;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0px 4px 10px
+rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            background-color: #ff4d6d;
+            color: white;
+            transform: scale(1.1);
+        }
+        @keyframes heartbeat {
+            0% {transform: scale(1); }
+            50% {transform:
+scale(1.2); }
+            100% {transform:
+scale(1); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0;
+transform: translateY(-30px); }
+            to { opacity: 1; transform:
+translateY(0); }
+        }
+
+        .hidden {
+           display: none;
+        }
+
+        .love-message {
+            font-size: 2em;
+            color: white;
+            margin-top: 20px;
+            animation: fadeIn 1.5s
+ease-in-out;
+        }
+
+        /* Floating Hearts */
+        .floating-heart {
+            position: absolute;
+            font-size: 2em;
+            color: rgba(225, 0, 0, 0.7);
+            animation: floatUp 4s
+infinite ease-in-out;
+        }
+
+        @keyframes floatUp {
+            0% { transform:
+translateY(0); opacity: 1; }
+            100% { transform:
+translateY(-200px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hai Maaboyy!</h1>
+        <p>You tekan button ni aaa hehe!</p>
+        <div class="heart">!</div>
+        <button class="btn"
+onclick="showLove()">Miss me gak tuh?</button>
+        <p id="loveMessage"
+class="love-message hidden">I love You Seng!</p>
+        </div>
+
+        <script>
+            function showlove() {
+
+document.getElementById("loveMessage").classList.remove("hidden");
+            createHearts();
+        }
+
+        function createHearts() {
+            for (let i = 0; i < 10; i++)
+{
+                let heart =
+document.createElement("div");
+
+heart.classList.add("floating-heart");
+                heart.innerHTML = "!";
+
+document.body.appendChild(heart);
+
+                let randomX =
+Math.random() * window.innerwidth;
+                let randomDuration = 2 +
+Math.random() * 3;
+
+                heart.style.left =
+randomX + "px";
+
+heart.style.animationDuration =
+randomDuration + "s";
+                setTimeout(() => {
+                    heart.remove();
+                }, randomDuration *
+1000);
+            }
+        }
+    </script>
+</body>
+</html>
